@@ -1,8 +1,9 @@
 import { useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowUpRight, Menu, Phone, Wind, X } from "lucide-react";
+import { ArrowUpRight, Menu, MessageCircle, Phone, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import purechargeLogo from "@/assets/purecharge-logo.png.asset.json";
 import { contacts, navigation } from "@/lib/purecharge-data";
 
 export function SiteShell({ children }: { children: ReactNode }) {
@@ -14,13 +15,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="site-header">
         <div className="site-header-inner">
           <Link className="brand-lockup" to="/" onClick={() => setMenuOpen(false)}>
-            <span className="brand-icon" aria-hidden="true">
-              <Wind size={21} />
-            </span>
-            <span className="brand-copy">
-              <strong>PURECHARGE</strong>
-              <span>CLIMATE SYSTEMS</span>
-            </span>
+            <img className="brand-image" src={purechargeLogo.url} alt="PureCharge" />
           </Link>
           <nav className="desktop-nav" aria-label="Main navigation">
             {navigation.map((item) => (
@@ -72,13 +67,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="footer-main">
           <div className="footer-brand">
             <Link className="brand-lockup footer-lockup" to="/">
-              <span className="brand-icon" aria-hidden="true">
-                <Wind size={21} />
-              </span>
-              <span className="brand-copy">
-                <strong>PURECHARGE</strong>
-                <span>CLIMATE SYSTEMS</span>
-              </span>
+              <img className="brand-image" src={purechargeLogo.url} alt="PureCharge" />
             </Link>
             <p>
               Harare’s climate specialists. Supply, installation, repairs, and ongoing care for
@@ -137,7 +126,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             rel="noreferrer"
             aria-label="Chat on WhatsApp"
           >
-            <Wind size={18} />
+            <MessageCircle size={18} />
           </a>
         </Button>
       </div>

@@ -199,33 +199,15 @@
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 10px;
   color: var(--ink);
   text-decoration: none;
 }
-.brand-icon {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 5px;
-  background: var(--primary);
-  color: var(--primary-foreground);
-}
-.brand-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-.brand-copy strong {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-}
-.brand-copy > span {
-  color: var(--muted-foreground);
-  font-size: 9px;
-  font-weight: 700;
+.brand-image {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: 160px;
+  object-fit: contain;
 }
 .desktop-nav {
   display: flex;
@@ -1369,12 +1351,8 @@
 .footer-lockup {
   color: var(--primary-foreground);
 }
-.footer-lockup .brand-icon {
-  background: var(--secondary);
-  color: var(--secondary-foreground);
-}
-.footer-lockup .brand-copy > span {
-  color: color-mix(in oklab, var(--primary-foreground) 65%, transparent);
+.footer-lockup .brand-image {
+  filter: brightness(0) invert(1);
 }
 .footer-brand > p {
   max-width: 290px;
@@ -1492,15 +1470,9 @@
     height: 64px;
     gap: 10px;
   }
-  .brand-icon {
-    width: 33px;
-    height: 33px;
-  }
-  .brand-copy strong {
-    font-size: 14px;
-  }
-  .brand-copy > span {
-    font-size: 8px;
+  .brand-image {
+    height: 38px;
+    max-width: 132px;
   }
   .desktop-nav {
     display: none;
