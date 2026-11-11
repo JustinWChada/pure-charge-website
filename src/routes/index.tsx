@@ -1,23 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { HomePage } from "@/components/purecharge/pages";
+import { SiteShell } from "@/components/purecharge/site-shell";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "PureCharge Climate Systems | Air Conditioning in Harare" },
+      {
+        name: "description",
+        content:
+          "Discover air conditioning supply, professional installation, repairs, and maintenance across Harare with PureCharge Climate Systems.",
+      },
+      { property: "og:title", content: "PureCharge Climate Systems | Harare" },
+      {
+        property: "og:description",
+        content:
+          "Air conditioning supply, installation, repairs, and maintenance across Greater Harare.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: IndexPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function IndexPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SiteShell>
+      <HomePage />
+    </SiteShell>
   );
 }

@@ -1,0 +1,97 @@
+{
+  "source": "code-archive",
+  "artifact": "pure-charge-main.zip",
+  "capabilities": [
+    {
+      "capability": "code",
+      "source": "static HTML site and design guide",
+      "outcome": "Recreated and browser-verified as seven frontend-only pages",
+      "status": "verified",
+      "next_action": "None"
+    },
+    {
+      "capability": "schema",
+      "source": "No database schema detected",
+      "outcome": "No backend or database added, as requested",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "records",
+      "source": "No data store or record exports detected",
+      "outcome": "No records to import",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "auth_identities",
+      "source": "No authentication detected",
+      "outcome": "No user accounts or authentication added",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "authorization",
+      "source": "No authorization rules detected",
+      "outcome": "No access-control system added",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "uploaded_file_bytes",
+      "source": "HVAC technician image, gallery photos, and original site imagery",
+      "outcome": "Imported the supplied technician photo and the referenced service/gallery photos; verified rendering",
+      "status": "verified",
+      "next_action": "None"
+    },
+    {
+      "capability": "external_providers",
+      "source": "Static WhatsApp and telephone links only",
+      "outcome": "Preserved contact links and verified the generated WhatsApp quotation URL",
+      "status": "verified",
+      "next_action": "None"
+    },
+    {
+      "capability": "public_endpoints",
+      "source": "None detected",
+      "outcome": "None recreated",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "callbacks_webhooks",
+      "source": "None detected",
+      "outcome": "None recreated",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "schedules",
+      "source": "None detected",
+      "outcome": "None recreated",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "secrets",
+      "source": "No environment variables or secrets detected",
+      "outcome": "None required",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "cutover",
+      "source": "Unpublished target app",
+      "outcome": "No production cutover requested",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "verification",
+      "source": "Frontend-only multi-page site",
+      "outcome": "All seven routes, page imagery, metadata, pricing, mobile navigation, and quotation flow verified; tests, lint, and type checks pass",
+      "status": "verified",
+      "next_action": "None"
+    }
+  ]
+}

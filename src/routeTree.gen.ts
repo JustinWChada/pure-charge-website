@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BrandsRouteImport } from './routes/brands'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as WhyUsRouteImport } from './routes/why-us'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BrandsRoute = BrandsRouteImport.update({
+  id: '/brands',
+  path: '/brands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyUsRoute = WhyUsRouteImport.update({
+  id: '/why-us',
+  path: '/why-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/brands': typeof BrandsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/pricing': typeof PricingRoute
+  '/services': typeof ServicesRoute
+  '/why-us': typeof WhyUsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/brands': typeof BrandsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/pricing': typeof PricingRoute
+  '/services': typeof ServicesRoute
+  '/why-us': typeof WhyUsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/brands': typeof BrandsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/pricing': typeof PricingRoute
+  '/services': typeof ServicesRoute
+  '/why-us': typeof WhyUsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/brands'
+    | '/contact'
+    | '/gallery'
+    | '/pricing'
+    | '/services'
+    | '/why-us'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/brands'
+    | '/contact'
+    | '/gallery'
+    | '/pricing'
+    | '/services'
+    | '/why-us'
+  id:
+    | '__root__'
+    | '/'
+    | '/brands'
+    | '/contact'
+    | '/gallery'
+    | '/pricing'
+    | '/services'
+    | '/why-us'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrandsRoute: typeof BrandsRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  PricingRoute: typeof PricingRoute
+  ServicesRoute: typeof ServicesRoute
+  WhyUsRoute: typeof WhyUsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/brands': {
+      id: '/brands'
+      path: '/brands'
+      fullPath: '/brands'
+      preLoaderRoute: typeof BrandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-us': {
+      id: '/why-us'
+      path: '/why-us'
+      fullPath: '/why-us'
+      preLoaderRoute: typeof WhyUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrandsRoute: BrandsRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  PricingRoute: PricingRoute,
+  ServicesRoute: ServicesRoute,
+  WhyUsRoute: WhyUsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
