@@ -4,6 +4,7 @@ import { ArrowUpRight, Menu, MessageCircle, Phone, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import purechargeLogo from "@/assets/purecharge-logo.png.asset.json";
+import { resolveAssetUrl } from "@/lib/asset-url";
 import { contacts, navigation } from "@/lib/purecharge-data";
 
 export function SiteShell({ children }: { children: ReactNode }) {
@@ -15,7 +16,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="site-header">
         <div className="site-header-inner">
           <Link className="brand-lockup" to="/" onClick={() => setMenuOpen(false)}>
-            <img className="brand-image" src={purechargeLogo.url} alt="PureCharge" />
+            <img className="brand-image" src={resolveAssetUrl(purechargeLogo.url)} alt="PureCharge" />
           </Link>
           <nav className="desktop-nav" aria-label="Main navigation">
             {navigation.map((item) => (
@@ -67,7 +68,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="footer-main">
           <div className="footer-brand">
             <Link className="brand-lockup footer-lockup" to="/">
-              <img className="brand-image" src={purechargeLogo.url} alt="PureCharge" />
+              <img className="brand-image" src={resolveAssetUrl(purechargeLogo.url)} alt="PureCharge" />
             </Link>
             <p>
               Harare’s climate specialists. Supply, installation, repairs, and ongoing care for

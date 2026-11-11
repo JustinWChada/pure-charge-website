@@ -25,6 +25,7 @@ import galleryOffice from "@/assets/purecharge-gallery-office.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { QuoteForm } from "@/components/purecharge/quote-form";
 import { PageHeading, QuoteCallout } from "@/components/purecharge/site-shell";
+import { resolveAssetUrl } from "@/lib/asset-url";
 import {
   contacts,
   equipment,
@@ -40,7 +41,7 @@ const services = [
     description:
       "Precision sizing and split-system fitting with neat trunking, sealed penetrations, vacuum testing, and electrical safety checks.",
     detail: "Standard installation is $90 per unit.",
-    image: serviceResidential.url,
+    image: resolveAssetUrl(serviceResidential.url),
     icon: Wind,
   },
   {
@@ -50,7 +51,7 @@ const services = [
     description:
       "Fast troubleshooting for refrigerant leaks, electrical faults, weak airflow, and noisy compressors.",
     detail: "Same-day emergency callouts available.",
-    image: serviceCommercial.url,
+    image: resolveAssetUrl(serviceCommercial.url),
     icon: Wrench,
   },
   {
@@ -60,7 +61,7 @@ const services = [
     description:
       "Deep coil cleaning, pressure checks, filter care, and performance testing to help your system run efficiently.",
     detail: "Scheduled plans for homes and businesses.",
-    image: serviceMaintenance.url,
+    image: resolveAssetUrl(serviceMaintenance.url),
     icon: Gauge,
   },
 ];
@@ -121,22 +122,24 @@ const gallery = [
   {
     location: "Borrowdale Residence",
     unit: "Electro Master · 12,000 BTU Inverter",
-    image: galleryResidence.url,
+    image: resolveAssetUrl(galleryResidence.url),
     alt: "A finished air conditioner installation at a Harare home",
   },
   {
     location: "Avondale Corporate Suites",
     unit: "Commercial system · condenser installation",
-    image: galleryOffice.url,
+    image: resolveAssetUrl(galleryOffice.url),
     alt: "Outdoor climate system installation at a commercial property",
   },
   {
     location: "Mount Pleasant Home",
     unit: "Commissioning · performance checks",
-    image: serviceCommercial.url,
+    image: resolveAssetUrl(serviceCommercial.url),
     alt: "A technician inspecting a residential air conditioning unit",
   },
 ];
+
+const technicianImage = resolveAssetUrl(technician.url);
 
 const testimonials = [
   {
@@ -210,7 +213,7 @@ export function HomePage() {
       <section className="home-hero">
         <img
           className="home-hero-image"
-          src={technician.url}
+          src={technicianImage}
           alt="A PureCharge technician carefully servicing a wall-mounted air conditioner"
           fetchPriority="high"
         />
@@ -519,7 +522,7 @@ export function WhyUsPage() {
         <div className="content-width trust-layout">
           <div className="trust-photo">
             <img
-              src={technician.url}
+              src={technicianImage}
               alt="PureCharge technician carrying out a professional air conditioning service"
               loading="lazy"
             />
